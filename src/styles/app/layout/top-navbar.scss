@@ -84,7 +84,7 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
     }
 
     .dropdown {
-        position: static; // allow header to be parent of dropdown
+        // position: static; // allow header to be parent of dropdown
         .dropdown-menu {
             position: absolute;
             margin-top: 0; // close to header
@@ -129,7 +129,10 @@ $nav-top-item-desktop-active:   $nav-top-item-mobile-active;
         &,
         &:hover,
         &:focus {
+            display: inline-block;
+            box-shadow: 0 -3px 0 rgba(0,0,0,.125) inset;
             background-color: transparent;
+            @include transition(all .2s);
         }
     } // the button to toggle search
     .navbar-nav>li>[data-toggle='navbar-search'] {

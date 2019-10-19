@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import $ from 'jquery';
 
+// Libraries for buttons
+import * as JSZip from "jszip";
+window.JSZip = JSZip;
+require('pdfmake/build/pdfmake.js');
+require('pdfmake/build/vfs_fonts.js');
 // Datatables
 require('datatables.net-bs')
 require('datatables.net-bs4/js/dataTables.bootstrap4.js')
@@ -17,9 +22,6 @@ require('datatables.net-buttons/js/buttons.flash.js') // Flash file export
 require('datatables.net-buttons/js/buttons.print.js') // Print view button
 require('datatables.net-keytable');
 require('datatables.net-keytable-bs/css/keyTable.bootstrap.css')
-require('jszip/dist/jszip.js');
-require('pdfmake/build/pdfmake.js');
-require('pdfmake/build/vfs_fonts.js');
 
 /**
  * Wrapper component for dataTable plugin

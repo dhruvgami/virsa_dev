@@ -1,4 +1,5 @@
- import React, { Component } from 'react';
+import elementClosest from 'element-closest';
+import React, { Component } from 'react';
 import ContentWrapper from '../Layout/ContentWrapper';
 import { Card, CardBody } from 'reactstrap';
 // Calendar
@@ -10,6 +11,9 @@ import events from './Calendar.events'
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
+
+// initialize closest polyfill
+elementClosest(window);
 
 // Setup the localizer by providing the moment
 BigCalendar.momentLocalizer(moment);

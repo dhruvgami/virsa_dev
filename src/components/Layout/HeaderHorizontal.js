@@ -11,7 +11,7 @@ import { UncontrolledDropdown,
          NavItem,
          NavLink,
          NavbarToggler } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -28,6 +28,13 @@ class HeaderHorizontal extends Component {
 
     componentDidMount() {
         HeaderRun();
+
+        // Listen for routes changes in order to hide the sidebar on mobile
+        this.props.history.listen(() => {
+            this.setState({
+                isOpen: false
+            });
+        });
     }
 
     toggle = () => {
@@ -145,11 +152,9 @@ class HeaderHorizontal extends Component {
                             { /* END Alert menu */ }
                             { /* START Offsidebar button */ }
                             <NavItem>
-                                <ToggleState state="offsidebar-open" nopersist={true}>
-                                    <NavLink href="" onClick={this.toggleOffsidebar}>
-                                        <em className="icon-notebook"></em>
-                                    </NavLink>
-                                </ToggleState>
+                                <NavLink href="" onClick={this.toggleOffsidebar}>
+                                    <em className="icon-notebook"></em>
+                                </NavLink>
                             </NavItem>
                             { /* END Offsidebar menu */ }
                         </Nav>
@@ -183,4 +188,4 @@ const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, d
 export default connect(
     mapStateToProps,
     mapDispatchToProps
-)(HeaderHorizontal);
+)(withRouter(HeaderHorizontal));

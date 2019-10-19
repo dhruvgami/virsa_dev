@@ -19,7 +19,6 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 const rtlcssLoader = path.resolve(__dirname, 'rtlcss-loader.js');
 
 module.exports = (webpackConfig, env, { paths }) => {
-
     // Support for RTL
     /*
     const isDev = webpackConfig.mode === 'development'
@@ -45,7 +44,7 @@ module.exports = (webpackConfig, env, { paths }) => {
     webpackConfig.module.rules.some(rule => {
         if (Array.isArray(rule.use)) {
             const eslintUse = rule.use.find(item =>
-                Object.keys(item.options).find(key => key === 'useEslintrc'),
+                Object.keys(item.options).find(key => key === 'useEslintrc')
             );
             eslintOptions = eslintUse && eslintUse.options;
             if (eslintOptions) {
@@ -62,7 +61,7 @@ module.exports = (webpackConfig, env, { paths }) => {
             jQuery: 'jquery',
             'window.jQuery': 'jquery',
             'window.moment': 'moment',
-            'moment': 'moment',
+            moment: 'moment',
             Raphael: 'raphael' // required by morris.js
         })
     ]);
@@ -70,7 +69,7 @@ module.exports = (webpackConfig, env, { paths }) => {
     // Allow cofiguration of router base href
     webpackConfig.plugins = (webpackConfig.plugins || []).concat([
         new webpack.DefinePlugin({
-            'PUBLIC_URL': JSON.stringify(process.env.PUBLIC_URL)
+            PUBLIC_URL: JSON.stringify(process.env.PUBLIC_URL)
         })
     ]);
 
@@ -80,5 +79,5 @@ module.exports = (webpackConfig, env, { paths }) => {
     // ]);
 
     // here you can extend your webpackConfig at will
-    return webpackConfig
-}
+    return webpackConfig;
+};

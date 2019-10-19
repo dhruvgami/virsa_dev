@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import $ from '../Common/wrapper.js';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import * as actions from '../../store/actions/actions';
 
 import HeaderHorizontal from './HeaderHorizontal'
 import Offsidebar from './Offsidebar'
 import Footer from './Footer'
 
-class Base extends Component {
-
-    componentWillMount() {
-        $('body').addClass('layout-h');
-    }
-
-    componentWillUnmount() {
-        // Only necessary for demo to restore classic layout
-        $('body').removeClass('layout-h');
-    }
+class BaseHorizontal extends Component {
+    /* Toggle Horizontal layout for demo purposes.
+        Set the 'horizontal' flag using redux in the settingsReducer
+        and remove below methods so it gets rendered by default
+    */
+    componentDidMount = () => this.props.actions.changeSetting('horizontal', true);
+    componentWillUnmount = () => this.props.actions.changeSetting('horizontal', false);
 
     render() {
 
@@ -35,4 +35,15 @@ class Base extends Component {
 
 }
 
-export default Base;
+BaseHorizontal.propTypes = {
+    actions: PropTypes.object,
+    settings: PropTypes.object
+};
+
+const mapStateToProps = state => ({ settings: state.settings });
+const mapDispatchToProps = dispatch => ({ actions: bindActionCreators(actions, dispatch) });
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(BaseHorizontal);

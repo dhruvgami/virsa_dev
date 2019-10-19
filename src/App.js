@@ -2,7 +2,7 @@
  *
  * Angle - Bootstrap Admin Template
  *
- * Version: 4.3
+ * Version: 4.5.5
  * Author: @themicon_co
  * Website: http://themicon.co
  * License: https://wrapbootstrap.com/help/licenses
