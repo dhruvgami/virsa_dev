@@ -1,4 +1,0 @@
-
-Make sure node v12 is in use. Use nvm to switch versions.
-Do `npm install` to set up the dependencies
-Do `npm run start` to serve the dev version locally
