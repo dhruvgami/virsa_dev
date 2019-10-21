@@ -7,6 +7,7 @@ import PageLoader from './components/Common/PageLoader';
 
 import Base from './components/Layout/Base';
 import BasePage from './components/Layout/BasePage';
+//import Festivals from './components/Festivals/Festivals';
 // import BaseHorizontal from './components/Layout/BaseHorizontal';
 
 /* Used to render a lazy component with react-router */
@@ -15,6 +16,7 @@ const waitFor = Tag => props => <Tag {...props}/>;
 const DashboardV1 = lazy(() => import('./components/Dashboard/DashboardV1'));
 const DashboardV2 = lazy(() => import('./components/Dashboard/DashboardV2'));
 const DashboardV3 = lazy(() => import('./components/Dashboard/DashboardV3'));
+const Festivals = lazy(() => import('./components/Festivals/Festivals'));
 
 const Widgets = lazy(() => import('./components/Widgets/Widgets'));
 
@@ -156,6 +158,7 @@ const Routes = ({ location }) => {
                                 <Route path="/dashboardv1" component={waitFor(DashboardV1)}/>
                                 <Route path="/dashboardv2" component={waitFor(DashboardV2)}/>
                                 <Route path="/dashboardv3" component={waitFor(DashboardV3)}/>
+                                <Route path="/festivals" component={waitFor(Festivals)}/>
 
                                 {/*Widgets*/}
                                 <Route path="/widgets" component={waitFor(Widgets)}/>

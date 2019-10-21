@@ -19,6 +19,10 @@ const Menu = [
             {
                 name: 'Dashboard v3',
                 path: '/dashboardv3'
+            },
+            {
+                name: 'Festivals',
+                path: '/festivals'
             }
         ]
     },
