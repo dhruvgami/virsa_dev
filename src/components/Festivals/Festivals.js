@@ -4,7 +4,7 @@ import ContentWrapper from '../Layout/ContentWrapper';
 require('babel-polyfill');
 
 const SiteClient = require('datocms-client').SiteClient;
-const client = new SiteClient('7ace633fda9abdfe515bb8b5ed7639');
+const client = new SiteClient(process.env.DATOCMS_KEY)
 var festival = String();
 client.items.all({'filter[type]': 'festival'}, {allPages: true})
                 .then((models) => console.log(models));
