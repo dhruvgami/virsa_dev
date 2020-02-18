@@ -21,3 +21,10 @@ Links to debug:
 https://community.netlify.com/t/common-issue-frequently-encountered-problems-during-builds/213
 
 Trying this: https://medium.com/better-programming/how-to-hide-your-api-keys-c2b952bc07e6
+^ This worked!
+
+next steps:
+- fetch and parse data from datocms to pick specific data elements and show on frontend
+- copy the render blocks from static version and create the cards
+- figure out how to manage images, fetch and display
+
