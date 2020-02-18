@@ -4,8 +4,8 @@ import ContentWrapper from '../Layout/ContentWrapper';
 require('babel-polyfill');
 
 const SiteClient = require('datocms-client').SiteClient;
-console.log("Key = " + process.env.DATOCMS_KEY);
-const client = new SiteClient(process.env.DATOCMS_KEY);
+console.log("Key = " + process.env.REACT_APP_DATOCMS_KEY);
+const client = new SiteClient(process.env.REACT_APP_DATOCMS_KEY);
 var festival = String();
 client.items.all({'filter[type]': 'festival'}, {allPages: true})
                 .then((models) => console.log(models));
@@ -13,7 +13,7 @@ client.items.all({'filter[type]': 'festival'}, {allPages: true})
 class Festivals extends Component {
     constructor() {
         super();
-        console.log(process.env.DATOCMS_KEY);
+        console.log(process.env.REACT_APP_DATOCMS_KEY);
         this.state = {
             // TODO: Change this to hold the entire array of results and retrieve into a list on the page
             festivalName: 'No Results'
