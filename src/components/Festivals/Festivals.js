@@ -16,7 +16,7 @@ class Festivals extends Component {
         console.log(process.env.DATOCMS_KEY);
         this.state = {
             // TODO: Change this to hold the entire array of results and retrieve into a list on the page
-            festivalName: ''
+            festivalName: 'No Results'
         }
     }
 
