@@ -115,7 +115,7 @@
     "sweetalert": "2.1.2",
     "types": "^0.1.1",
     "typescript": "^3.6.4",
-    "validator": "10.9.0",
+    "validator": "13.7.0",
     "weather-icons": "github:erikflowers/weather-icons",
     "whirl": "github:themicon/whirl"
   },
